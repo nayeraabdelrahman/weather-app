@@ -50,7 +50,7 @@ searchInput.addEventListener('input',function(e){
 })
 
 async function searchCity(countryinput){
-    let response=await fetch(`http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${countryinput}`);
+    let response=await fetch(`https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${countryinput}`);
     try{
         if(!response.ok){
             throw new Error(`API error: ${response.statusText}`);
@@ -73,7 +73,7 @@ async function searchCity(countryinput){
 }
 // get weather data for city---------------------------------
 async function getWeather(country) {
-    let response=await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${country}&days=3`);
+    let response=await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${country}&days=3`);
     try{
         if (!response.ok) {
             if (response.status === 400) {
